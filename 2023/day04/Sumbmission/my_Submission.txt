@@ -1,0 +1,55 @@
+What is Shell Scripting for DevOps?
+Shell scripting is a way to automate tasks and manage systems more efficiently using a script written in a shell programming language. In the context of DevOps, shell scripting is used to automate repetitive tasks, manage server configurations, deploy applications, monitor systems, and much more. Shell scripts can execute commands, manipulate files, and interact with system processes.
+
+Examples:
+Automating Backups: A shell script can be written to automatically back up important files and databases at regular intervals.
+
+tar -czvf /backup/myproject-$(date +%F).tar.gz /path/to/project
+
+Deploying Applications: Automate the deployment of an application by pulling the latest code from a repository, installing dependencies, and starting the application.
+
+#!/bin/bash
+git pull origin main
+npm install
+pm2 restart myapp
+
+What is #!/bin/bash? Can we write #!/bin/sh as well?
+#!/bin/bash is known as a shebang. It tells the system that the script should be executed using the Bash shell. Similarly, #!/bin/sh tells the system to use the /bin/sh shell, which is often a symbolic link to a shell like Bash or Dash.
+
+While #!/bin/bash explicitly specifies the Bash shell, #!/bin/sh is more generic and might point to different shells on different systems. Using #!/bin/bash ensures that Bash-specific features are available, while #!/bin/sh aims for broader compatibility.
+
+
+#!/bin/bash
+echo "I will complete #90DaysOfDevOps challenge"
+Shell Script to Take User Input and Arguments
+
+#!/bin/bash
+# Taking user input
+echo "Enter your name:"
+read userName
+
+# Taking input from arguments
+arg1=$1
+arg2=$2
+
+# Printing the variables
+echo "User input: $userName"
+echo "First argument: $arg1"
+echo "Second argument: $arg2"
+Example of If-Else in Shell Scripting by Comparing Two Numbers
+sh
+
+#!/bin/bash
+
+# Define two numbers
+num1=10
+num2=20
+
+# Compare the numbers
+if [ $num1 -gt $num2 ]; then
+    echo "$num1 is greater than $num2"
+elif [ $num1 -lt $num2 ]; then
+    echo "$num1 is less than $num2"
+else
+    echo "$num1 is equal to $num2"
+fi
